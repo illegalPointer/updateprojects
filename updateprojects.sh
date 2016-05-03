@@ -13,6 +13,7 @@ for line in */; do
   if [ -z "$error" ]; then
     echo "\tFetching..."
     git fetch
+    sleep 1
     uptodate=$(echo $gitstatus | grep -o "up-to-date")
     if [ "$uptodate" ]; then
       echo "\t${GREEN}$(echo $line | sed 's/\/$//') seems to be up-to date, no need to update${GRAY}"
